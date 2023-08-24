@@ -16,3 +16,8 @@ export async function getAllPosts(): Promise<Post[]> {
     .then<Post[]>(JSON.parse) // ((data) => JSON.parse(data)) 전달 및 호출 인자가 동일하면 생략가능
     .then((posts) => posts.sort((a, b) => (a.date > b.date ? -1 : 1)));
 }
+
+export async function getFeaturedPosts(): Promise<Post[]> {
+  return getAllPosts() //
+    .then((posts) => posts.filter((post) => post.featured));
+}

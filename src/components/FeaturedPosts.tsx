@@ -1,11 +1,11 @@
 import PostsGrid from "./PostsGrid";
-import { getAllPosts } from "@/API/posts";
+import { getFeaturedPosts } from "@/API/posts";
 
 export default async function FeaturedPost() {
-  const posts = await getAllPosts();
+  const posts = await getFeaturedPosts();
   return (
     <section>
-      <h2>Featured Posts</h2>
+      <h2 className="text-2xl font-bold">Featured Posts</h2>
       <PostsGrid posts={posts} />
     </section>
   );
