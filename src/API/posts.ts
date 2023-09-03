@@ -31,7 +31,7 @@ export async function getNonFeaturedPosts(): Promise<Post[]> {
 export async function getPostData(fileName: string): Promise<PostData> {
   const filePath = path.join(process.cwd(), "data", "posts", `${fileName}.md`);
   const metaData = await getAllPosts() //
-    .then((posts) => posts.find((post) => post.path === fileName));
+    .then((post) => post.find((el) => el.path === fileName));
 
   if (!metaData)
     throw new Error(`${fileName}에 해당하는 포스트를 찾을 수 없음`);
