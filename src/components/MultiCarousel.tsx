@@ -4,7 +4,7 @@ import "react-multi-carousel/lib/styles.css";
 const responsive = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 3000 },
-    items: 4,
+    items: 4, // grid가 4까지니까
   },
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
