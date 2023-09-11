@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { getPostData } from "@/API/posts";
 import PostContent from "@/components/PostContent";
+import AdjacentPostCard from "@/components/AdjacentPostCard";
 type Props = {
   params: {
     slug: string;
@@ -20,9 +21,11 @@ export default async function PostPage({ params: { slug } }: Props) {
         height={420}
       />
       <PostContent post={post} />
-      <section>
-        <p>{prev && prev.title}</p>
-        <p>{next && next.title}</p>
+      <section className="flex shadow-md">
+        {/* @ts-expect-error Server Component */}
+        {prev && <AdjacentPostCard post={prev} type="prev" />}
+        {/* @ts-expect-error Server Component */}
+        {next && <AdjacentPostCard post={next} type="next" />}
       </section>
     </article>
   );
