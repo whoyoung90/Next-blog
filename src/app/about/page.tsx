@@ -1,6 +1,6 @@
 import Hero from "@/components/Hero";
 
-const TITLE_CLASS = "text-2xl font-bold text-gray-800 my-2";
+const TITLE_CLASS = "text-2xl font-bold text-gray-800 my-2"; // 상수 변수화
 
 export default function AboutPage() {
   return (
@@ -22,8 +22,6 @@ export default function AboutPage() {
           React, Vue, TypeScript
           <br />
           Next, Nuxt, Git
-          <br />
-          VS Code
         </p>
       </section>
     </>

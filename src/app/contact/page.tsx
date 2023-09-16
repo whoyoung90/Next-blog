@@ -2,10 +2,11 @@ import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from "react-icons/ai";
 import ContactForm from "@/components/ContactForm";
 
 const LINKS = [
-  { icon: <AiFillGithub />, url: "" },
-  { icon: <AiFillInstagram />, url: "" },
+  { icon: <AiFillGithub />, url: "https://github.com/whoyoung90" },
+  { icon: <AiFillInstagram />, url: "https://www.instagram.com/whoyoung90" },
   { icon: <AiFillLinkedin />, url: "" },
 ];
+
 export default function ContactPage() {
   return (
     <section className="flex flex-col items-center">

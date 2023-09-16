@@ -2,6 +2,7 @@ import Image from "next/image";
 import { getPostData } from "@/API/posts";
 import PostContent from "@/components/PostContent";
 import AdjacentPostCard from "@/components/AdjacentPostCard";
+
 type Props = {
   params: {
     slug: string;
