@@ -3,8 +3,12 @@ export type BannerData = {
   state: "success" | "error";
 };
 
-export default function Banner({ banner }: { banner: BannerData }) {
-  const isSuccess = banner.state === "success";
+export default function Banner({
+  banner: { state, message },
+}: {
+  banner: BannerData;
+}) {
+  const isSuccess = state === "success";
   const icon = isSuccess ? "✅" : "🔥";
   return (
     <p
@@ -12,7 +16,7 @@ export default function Banner({ banner }: { banner: BannerData }) {
         isSuccess ? "bg-green-300" : "bg-red-300"
       }`}
     >
-      {`${icon} ${banner.message}`}
+      {`${icon} ${message}`}
     </p>
   );
 }
