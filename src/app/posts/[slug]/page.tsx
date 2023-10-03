@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getPostData } from "@/API/posts";
+import { getFeaturedPosts, getPostData } from "@/API/posts";
 import PostContent from "@/components/PostContent";
 import AdjacentPostCard from "@/components/AdjacentPostCard";
 
@@ -38,4 +38,12 @@ export default async function PostPage({ params: { slug } }: Props) {
       </section>
     </article>
   );
+}
+
+// 동적 라우팅 페이지에서 "특정" 페이지를 미리 만들어 두고 싶다면(SSG)
+export async function generateStaticParams() {
+  const posts = await getFeaturedPosts();
+  return posts.map((post) => ({
+    slug: post.path,
+  }));
 }
