@@ -1,5 +1,10 @@
+import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 
+export const metadata: Metadata = {
+  title: "About Me",
+  description: "나의 커리어 소개",
+};
 const TITLE_CLASS = "text-2xl font-bold text-gray-800 my-3"; // 상수 변수화
 
 export default function AboutPage() {

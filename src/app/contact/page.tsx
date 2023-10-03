@@ -1,6 +1,11 @@
+import type { Metadata } from "next";
 import { SiGithub, SiInstagram, SiTistory } from "react-icons/si";
 import ContactForm from "@/components/ContactForm";
 
+export const metadata: Metadata = {
+  title: "Contact Me",
+  description: "나에게 이메일을 보내줘!",
+};
 const LINKS = [
   { icon: <SiGithub />, url: "https://github.com/whoyoung90" },
   { icon: <SiInstagram />, url: "https://www.instagram.com/whoyoung90" },
