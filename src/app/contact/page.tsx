@@ -1,18 +1,18 @@
-import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from "react-icons/ai";
+import { SiGithub, SiInstagram, SiTistory } from "react-icons/si";
 import ContactForm from "@/components/ContactForm";
 
 const LINKS = [
-  { icon: <AiFillGithub />, url: "https://github.com/whoyoung90" },
-  { icon: <AiFillInstagram />, url: "https://www.instagram.com/whoyoung90" },
-  { icon: <AiFillLinkedin />, url: "" },
+  { icon: <SiGithub />, url: "https://github.com/whoyoung90" },
+  { icon: <SiInstagram />, url: "https://www.instagram.com/whoyoung90" },
+  { icon: <SiTistory />, url: "https://whoyoung90.tistory.com" },
 ];
 
 export default function ContactPage() {
   return (
     <section className="flex flex-col items-center">
-      <h2 className="text-3xl font-bold my-2">Contact Me</h2>
+      <h2 className="text-3xl font-bold my-4">Contact Me</h2>
       <p>whoyoung90@naver.com</p>
-      <ul className="flex gap-4 my-2">
+      <ul className="flex gap-6 my-6">
         {LINKS.map((link, index) => (
           <a
             key={index}

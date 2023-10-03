@@ -26,8 +26,8 @@ export default function ContactForm() {
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // 페이지가 다시 로딩되지 않도록
     try {
-      await sendContactEmail(form);
-      setBanner({ message: "메일을 전송하였습니다!", state: "success" });
+      const { message } = await sendContactEmail(form);
+      setBanner({ message, state: "success" });
       setForm(DEFAULT_DATA);
     } catch {
       setBanner({
@@ -37,7 +37,7 @@ export default function ContactForm() {
     } finally {
       setTimeout(() => {
         setBanner(null);
-      }, 2000);
+      }, 3000);
     }
   };
   return (

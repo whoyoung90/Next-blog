@@ -1,7 +1,6 @@
 import * as yup from "yup";
 import { sendEmail } from "@/API/email";
 
-// yup: 데이터 유효성 검사 라이브러리
 const bodySchema = yup.object().shape({
   from: yup.string().email().required(),
   subject: yup.string().required(),
@@ -23,19 +22,17 @@ export async function POST(req: Request) {
   }
 
   // [2] 노드 메일러를 이용하여 메일 전송
-  return sendEmail(body) //
-    .then(
-      () =>
-        new Response(JSON.stringify({ message: "메일을 성공적으로 보냈음" }), {
-          status: 200,
-        })
-    )
-    .catch((error) => {
-      console.error(error);
-      new Response(JSON.stringify({ message: "메일 전송에 실패함!" }), {
-        status: 500,
-      });
+  try {
+    await sendEmail(body);
+    return new Response(JSON.stringify({ message: "메일을 전송하였습니다!" }), {
+      status: 200,
     });
+  } catch (error) {
+    console.error(error);
+    return new Response(JSON.stringify({ message: "메일 전송에 실패함!" }), {
+      status: 500,
+    });
+  }
 }
 
 // *: API Route에서 사용하는 Request는 Node에서 사용하는 Request와 동일하므로 body는 ReadableStream이다.
