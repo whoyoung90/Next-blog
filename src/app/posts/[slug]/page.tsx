@@ -34,9 +34,7 @@ export default async function PostPage({ params: { slug } }: Props) {
       />
       <PostContent post={post} />
       <section className="flex shadow-md">
-        {/* @ts-expect-error Server Component */}
         {prev && <AdjacentPostCard post={prev} type="prev" />}
-        {/* @ts-expect-error Server Component */}
         {next && <AdjacentPostCard post={next} type="next" />}
       </section>
     </article>
