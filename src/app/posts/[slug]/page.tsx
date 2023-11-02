@@ -1,21 +1,24 @@
 import Image from "next/image";
+import { Metadata } from "next";
 import { getFeaturedPosts, getPostData } from "@/API/posts";
 import PostContent from "@/components/PostContent";
 import AdjacentPostCard from "@/components/AdjacentPostCard";
 
+type Props = {
+  params: {
+    slug: string;
+  };
+};
 // dynamic metaData
-export async function generateMetadata({ params: { slug } }: Props) {
+export async function generateMetadata({
+  params: { slug },
+}: Props): Promise<Metadata> {
   const { title, description } = await getPostData(slug);
   return {
     title,
     description,
   };
 }
-type Props = {
-  params: {
-    slug: string;
-  };
-};
 
 export default async function PostPage({ params: { slug } }: Props) {
   const post = await getPostData(slug);

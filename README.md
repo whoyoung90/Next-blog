@@ -1,8 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next-blog
 
-## Getting Started
-
-First, run the development server:
+## 🚩 Build Setup
 
 ```bash
 npm run dev
@@ -12,23 +10,29 @@ yarn dev
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<br />
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚩 Next 개발 환경
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+# Next version
+"next": "^13.5.3",
+```
 
-## Learn More
+```bash
+# Used Library
 
-To learn more about Next.js, take a look at the following resources:
+## 캐러셀
+"react-multi-carousel": "^2.8.4",
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 컨텐츠 마크다운
+"react-markdown": "^8.0.7",
+"remark-gfm": "^3.0.1",
+"react-syntax-highlighter": "^15.5.0",
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 이메일 전송 (서버에서 동작하는 node 환경에서 쓸 수 있는 라이브러리)
+"nodemailer": "^6.9.5",
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 사용자가 입력한 데이터 유효성 검사
+"yup": "^1.3.2"
+```
