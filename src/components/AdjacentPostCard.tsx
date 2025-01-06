@@ -36,4 +36,8 @@ export default async function AdjacentPostCard({
   );
 }
 
-// tailwind) group, group-hover를 지정하면 해당 효과를 그룹화 할 수 있다!
+/**
+ * @description group, group-hover
+ * FaArrowLeft 이미지만이 아니라, 해당 카드 전체에 hover 효과를 주고 싶다면
+ * group, group-hover를 지정하여 해당 효과를 그룹화 할 수 있다!
+ */

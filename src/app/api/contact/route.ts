@@ -13,10 +13,11 @@ const bodySchema = yup.object().shape({
  * 특정 경로에 GET, POST, PUT, DELETE과 같은 요청이 오면 그때 함수가 실행되도록!
  */
 export async function POST(req: Request) {
+  const errMsg = "메일 전송에 실패했습니다. 다시 시도해 주세요!";
   const body = await req.json(); // *[error] ReadableStream
 
   if (!bodySchema.isValidSync(body)) {
-    return new Response(JSON.stringify({ message: "메일 전송에 실패함!" }), {
+    return new Response(JSON.stringify({ message: errMsg }), {
       status: 400,
     });
   }
@@ -29,7 +30,7 @@ export async function POST(req: Request) {
     });
   } catch (error) {
     console.error(error);
-    return new Response(JSON.stringify({ message: "메일 전송에 실패함!" }), {
+    return new Response(JSON.stringify({ message: errMsg }), {
       status: 500,
     });
   }

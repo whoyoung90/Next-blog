@@ -29,7 +29,7 @@ export default function FilterablePosts({ posts, categories }: Props) {
 }
 
 /**
- * @description 전달 및 호출 인자가 동일하면 생략가능
+ * @description 전달인자와 호출 인자가 동일하면 생략가능
  * onClick={(selected) => setSelected(selected)}
  * onClick={setSelected}
  */

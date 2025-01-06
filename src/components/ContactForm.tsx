@@ -1,5 +1,5 @@
 "use client";
-import { ChangeEvent, FormEvent, useState } from "react";
+import { useState, ChangeEvent, FormEvent } from "react";
 import Banner, { BannerData } from "./Banner";
 import { sendContactEmail } from "@/API/contact";
 
@@ -29,9 +29,10 @@ export default function ContactForm() {
       const { message } = await sendContactEmail(form);
       setBanner({ message, state: "success" });
       setForm(DEFAULT_DATA);
-    } catch {
+    } catch (error) {
+      const errMsg = `${(error as Error).message}` || "메일 전송 실패 😂";
       setBanner({
-        message: "메일 전송에 실패했습니다. 다시 시도해 주세요!",
+        message: errMsg,
         state: "error",
       });
     } finally {
